@@ -50,15 +50,14 @@ int main(int argc, char *argv[]) {
 		printf("sendto error\n");
 		exit(0);
 	}
-	memset(buf,0,BUF_LEN);
+	//memset(buf,0,BUF_LEN);
 	/*수신된 echo 메시지 화면 출력 */
 	printf("Echoed string : ");
 	if(recvfrom(s, buf, BUF_LEN, 0, (struct sockaddr *)&server_addr, &addrsize) < 0) {
 		printf("recevfrom error\n");
 		exit(0);
 	}
-
-	//printf("HI");
+	printf("%s",buf);
 	printf("\n");
 	close(s);
 }
